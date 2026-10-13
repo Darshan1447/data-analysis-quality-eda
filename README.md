@@ -1,8 +1,8 @@
- California Housing — Data Quality Audit & Exploratory Analysis
+# California Housing — Data Quality Audit & Exploratory Analysis
 
 A reproducible Python project that audits the quality of the California Housing dataset and explores its numerical distributions, correlations, and selected feature/target relationships. This is a descriptive analysis project, not a predictive model.
 
- Project highlights
+## Project highlights
 
 - Checks the dataset schema, missingness, exact duplicate rows, non-finite values, basic value ranges, and unusual observations.
 - Produces descriptive statistics, Pearson and Spearman correlations, and a comparison of target summaries across median-income quintiles.
@@ -10,7 +10,7 @@ A reproducible Python project that audits the quality of the California Housing 
 - Preserves the input CSV: the analysis does not impute values, delete rows, round target values, or create engineered features.
 - Includes external unit tests for the schema contract and range-check behavior.
 
- Dataset and provenance
+## Dataset and provenance
 
 The California Housing dataset is described in the official scikit-learn documentation. It contains 20,640 census block-group observations and eight numeric input features plus the `MedHouseVal` target. The observations derive from the 1990 U.S. Census; rows are geographic block-group summaries, not individual house listings. The target is expressed in units of $100,000, and the documentation describes an upper cap of 5.0.
 
@@ -20,7 +20,17 @@ The California Housing dataset is described in the official scikit-learn documen
 
 The raw CSV is not included in this repository. This avoids redistributing the dataset without separately assessing its applicable terms. Use `prepare_dataset.py` to obtain the dataset via scikit-learn's documented loader and save the expected local CSV. Dataset terms remain separate from the license for this project’s code.
 
- Key findings in the published analysis snapshot
+## Explore the analysis:
+
+- [Read the full analysis report](reports/housing_analysis_report.md)
+- [Target distribution](reports/figures/01_target_distribution.png)
+- [Feature distributions](reports/figures/02_feature_distributions.png)
+- [Correlation heatmap](reports/figures/03_correlation_heatmap.png)
+- [Median income vs. target](reports/figures/04_income_vs_target_hexbin.png)
+- [Target by income quintile](reports/figures/05_target_by_income_quintile.png)
+- [Geography by target](reports/figures/06_geography_by_target.png)
+
+## Key findings in the published analysis snapshot:
 
 The reviewed report and tables describe the supplied CSV artifact used for this analysis:
 
@@ -32,10 +42,10 @@ The reviewed report and tables describe the supplied CSV artifact used for this 
 
 These are descriptive associations, not causal findings or current-market price estimates. The report documents the exact target-value discrepancy rather than altering the data. Re-created data and outputs should be checked when software versions or source artifacts differ.
 
- Repository structure
+## Repository structure
 
 ```text
-california-housing-data-quality-eda/
+data-analysis-quality-eda/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -54,7 +64,7 @@ california-housing-data-quality-eda/
 
 The script writes execution outputs under `outputs/` by default. This generated directory is excluded from Git because runtime metadata contains machine-specific execution paths. The reviewed report snapshot and selected tables/figures are stored under `reports/` instead.
 
- Setup and execution (Windows PowerShell)
+## Setup and execution (Windows PowerShell)
 
 Use Python 3.10 or newer. From the repository root:
 
@@ -76,7 +86,7 @@ To use a different CSV or output directory:
 python housing_analysis.py --input path\to\california_housing.csv --output-dir path\to\outputs
 ```
 
- Interpretation and limitations
+## Interpretation and limitations
 
 - Historical 1990 Census context: these are not current California housing listings or current-market estimates.
 - Each row represents a census block group, not an individual property.
@@ -85,14 +95,14 @@ python housing_analysis.py --input path\to\california_housing.csv --output-dir p
 - Correlation does not establish causation; geography, aggregation, and unmeasured variables may affect relationships.
 - No predictive model is trained or tuned.
 
- Tests and quality notes
+## Tests and quality notes
 
 The `tests/` suite independently exercises the declared schema and verifies that the range-check function flags deliberately invalid sample values. Once the dataset is prepared, a dataset-contract test checks its actual dimensions, columns, missingness, and finite numeric values. The production script's existing internal assertions are preserved unchanged for provenance; the external tests supplement them.
 
- Acknowledgements and AI assistance
+## Acknowledgements and AI assistance
 
 Dataset provenance and interpretation notes are credited to the official scikit-learn documentation and the original StatLib source. AI assistance was used during project analysis, code/documentation review, and portfolio preparation; the repository should not be represented as exclusively manual work.
 
- License
+## License
 
 The included MIT license applies to the project code and original project materials where the author has rights to license them. It does not relicense the underlying dataset or third-party content. Review the dataset source terms separately before redistributing raw data.
