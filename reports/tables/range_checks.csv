@@ -1,0 +1,12 @@
+check,rule,observed_violations,status
+MedInc positive,MedInc > 0,0,PASS
+HouseAge within plausible observed range,1 <= HouseAge <= 52,0,PASS
+AveRooms positive,AveRooms > 0,0,PASS
+AveBedrms positive,AveBedrms > 0,0,PASS
+Population non-negative,Population >= 0,0,PASS
+AveOccup positive,AveOccup > 0,0,PASS
+Latitude geographic bounds,-90 <= Latitude <= 90,0,PASS
+Longitude geographic bounds,-180 <= Longitude <= 180,0,PASS
+Target non-negative,MedHouseVal >= 0; the documented upper cap is audited separately,0,PASS
+HouseAge integer-valued,HouseAge values are whole-number coded,0,PASS
+Population integer-valued,Population values are whole-number counts despite float CSV dtype,0,PASS

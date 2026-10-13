@@ -1,0 +1,31 @@
+# Python virtual environments
+.venv/
+.venv_clean/
+.venv_verify/
+venv/
+env/
+
+# Bytecode and test/tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Locally prepared source data (not redistributed in this repository)
+data/*.csv
+data/*.csv.tmp
+
+# Generated runtime outputs; run_metadata.json records absolute local paths
+outputs/
+
+# Local configuration and editor/OS files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

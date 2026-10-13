@@ -1,0 +1,10 @@
+column,dtype,missing_count,unique_values,min,median,max,meaning
+MedInc,float64,0,12928,0.4999,3.5347999999999997,15.0001,Median income in the block group; do not interpret as raw dollars without source context.
+HouseAge,float64,0,52,1.0,29.0,52.0,Median house age in the block group.
+AveRooms,float64,0,19392,0.8461538461538461,5.229128787878788,141.9090909090909,Average number of rooms per household; can be unusually high for some block groups.
+AveBedrms,float64,0,14233,0.3333333333333333,1.048780487804878,34.06666666666667,Average number of bedrooms per household; can be unusually high for some block groups.
+Population,float64,0,3888,3.0,1166.0,35682.0,"Block-group population, not a household count."
+AveOccup,float64,0,18841,0.6923076923076923,2.818115654360196,1243.3333333333333,Average household occupants; aggregate ratio that can have extreme values.
+Latitude,float64,0,862,32.54,34.26,41.95,Block-group latitude.
+Longitude,float64,0,844,-124.35,-118.49,-114.31,Block-group longitude.
+MedHouseVal,float64,0,3842,0.14999,1.797,5.00001,"Median house-value target, in units of $100,000; documentation describes an upper cap of 5.0."

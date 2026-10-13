@@ -1,0 +1,11 @@
+metric,value,note
+rows,20640.0,Rows in supplied CSV
+columns,9.0,Columns in supplied CSV
+numeric_columns,9.0,Columns parsed as numeric
+missing_cells,0.0,Pandas CSV parser missing values
+rows_with_any_missing,0.0,Rows containing at least one missing value
+exact_duplicate_rows_beyond_first,0.0,DataFrame.duplicated() count
+nonfinite_numeric_values,0.0,NaN/positive or negative infinity numeric values; NaNs also separately reported as missing
+target_rows_ge_5_0,992.0,Target cap/value audit; not a cleaning filter
+target_values_eq_5_00001,965.0,Exact observed value frequency within 1e-12 tolerance
+target_max,5.00001,Maximum observed target; preserved as uploaded
